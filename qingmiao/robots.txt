@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nbqingmiao.cn/qingmiao/sitemap.xml
+Sitemap: https://www.nbqingmiao.cn/qingmiao/sitemap.xml
