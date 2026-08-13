@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="applicable-device" content="pc,mobile">
 <meta name="description" content="宁波青苗智能科技有限公司专注汽配与跨境电商行业，提供WMS仓库管理系统、OMS订单管理系统、TMS运输管理系统及供应链数字化转型整体解决方案。">
 <meta name="keywords" content="宁波青苗智能科技有限公司,青苗智能,WMS仓库管理系统,OMS订单管理系统,TMS运输管理系统,汽配供应链,跨境电商数字化">
-<link rel="canonical" href="https://www.nbqingmiao.cn/qingmiao/">
+<link rel="canonical" href="https://nbqingmiao.cn/qingmiao/">
 <title>宁波青苗智能科技有限公司-汽配跨境电商供应链系统-WMS/OMS/TMS</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -121,7 +122,7 @@ body{
 /* ===== 产品 ===== */
 #products{background:#f8faff}
 .product-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:24px
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px
 }
 .product-card{
   background:#fff;border-radius:16px;padding:32px 26px;
@@ -133,6 +134,7 @@ body{
 .product-card:nth-child(1){animation-delay:.1s}
 .product-card:nth-child(2){animation-delay:.2s}
 .product-card:nth-child(3){animation-delay:.3s}
+.product-card:nth-child(4){animation-delay:.4s}
 .product-card::before{
   content:"";position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,#2478f3,#818cf8);
@@ -240,6 +242,9 @@ body{
 .lang-switch:hover{background:#eef2ff;transform:translateY(-1px)}
 
 /* ===== 响应式 ===== */
+@media(max-width:1100px){
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+}
 @media(max-width:768px){
   .section{padding:56px 20px}
   .section-title{font-size:24px}
@@ -279,7 +284,7 @@ body{
     <div class="about-text">
       <h3 data-i18n="index.aboutTitle">关于青苗智能</h3>
       <p data-i18n-html="index.aboutP1">宁波青苗智能科技有限公司成立于<strong>2021年</strong>，是<strong>"一院一中心"重点孵化的科技企业</strong>，也是<strong>浙江大学孵化</strong>的创业公司。公司总部位于浙江省宁波市鄞州区，入驻e舟智慧产业园。</p>
-      <p data-i18n-html="index.aboutP2">公司聚焦于<strong>汽配</strong>与<strong>跨境电商</strong>两大行业，定位于<strong>"供应链四化整体解决方案服务商"</strong>，核心产品涵盖 OMS/WMS/TMS 等供应链管理系统。</p>
+      <p data-i18n-html="index.aboutP2">公司聚焦于<strong>汽配</strong>与<strong>跨境电商</strong>两大行业，定位于<strong>"供应链四化整体解决方案服务商"</strong>，核心产品涵盖 OMS/WMS/WCS/TMS 等供应链管理系统。</p>
       <a class="btn-link" href="info.html" data-i18n="index.fullIntro">查看完整介绍 →</a>
     </div>
     <div class="about-stats">
@@ -312,6 +317,12 @@ body{
       <h4 data-i18n="index.productTmsTitle">TMS 运输管理系统</h4>
       <p data-i18n="index.productTmsDesc">运输计划、运力调度、在途监控及费用结算全流程管理，支持多模式运输，优化物流成本。</p>
       <span class="product-tag" data-i18n="index.supplyTag">供应链</span>
+    </div>
+    <div class="product-card">
+      <span class="icon">⚙️</span>
+      <h4 data-i18n="index.productWcsTitle">WCS 控制系统</h4>
+      <p data-i18n="index.productWcsDesc">兼容多协议，统一调度输送、分拣、AGV 等物流设备，实现仓储自动化作业与数字化协同。</p>
+      <span class="product-tag" data-i18n="index.coreTag">核心产品</span>
     </div>
   </div>
 </section>
@@ -347,13 +358,9 @@ body{
   <h2 class="section-title" data-i18n="index.clientsTitle">合作伙伴与客户</h2>
   <p class="section-sub" data-i18n="index.clientsSub">客户覆盖新能源、汽车零部件、高端装备制造等多个领域</p>
   <div class="client-logos">
-    <span class="client-item" data-i18n="index.client1">比亚迪</span>
-    <span class="client-item" data-i18n="index.client2">万向</span>
     <span class="client-item" data-i18n="index.client3">丰田</span>
     <span class="client-item" data-i18n="index.client4">航泰军工</span>
-    <span class="client-item" data-i18n="index.client5">孚能科技</span>
     <span class="client-item" data-i18n="index.client6">浙江爱信宏达</span>
-    <span class="client-item" data-i18n="index.client7">宁波精华电子</span>
     <span class="client-item" data-i18n="index.client8">温州电信</span>
     <span class="client-item" data-i18n="index.client9">浙江大学</span>
   </div>
