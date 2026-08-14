@@ -159,7 +159,7 @@
     "info.pptZhLabel": "Chinese Version",
     "info.pptEnLabel": "English Version",
     "info.pptSlidesCountZh": "47 slides in total, click an image to enlarge",
-    "info.pptSlidesCountEn": "47 slides in total, click an image to enlarge",
+    "info.pptSlidesCountEn": "46 slides in total, click an image to enlarge",
     "info.pptPrev": "Previous",
     "info.pptNext": "Next",
     "info.pptOpen": "Enlarge",
