@@ -89,6 +89,48 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .footer a:hover{text-decoration:underline}
 .lang-switch{position:fixed;top:18px;right:18px;z-index:100;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 2px 10px rgba(0,0,0,.08);font-size:13px;color:#1a3a6f;cursor:pointer;font-weight:600;transition:all .3s}
 .lang-switch:hover{background:#eef2ff;transform:translateY(-1px)}
+.ppt-decks{margin-top:22px}
+.ppt-deck-intro{font-size:14px;color:#4b5563;line-height:1.8;margin-top:10px}
+.ppt-switch{display:inline-flex;gap:6px;background:#eef2f7;padding:4px;border-radius:10px;margin-bottom:18px}
+.ppt-switch button{border:1px solid transparent;background:transparent;padding:8px 18px;border-radius:8px;font-size:13px;color:#4b5563;cursor:pointer;font-weight:600;transition:all .2s}
+.ppt-switch button.active{background:#fff;color:#2478f3;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.ppt-deck{display:none}
+.ppt-deck.active{display:block}
+.ppt-deck-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.ppt-deck-head h4{font-size:15px;color:#111827;font-weight:600}
+.ppt-deck-meta{font-size:12px;color:#9ca3af}
+.ppt-stage{position:relative;border-radius:12px;overflow:hidden;background:#0f172a;border:1px solid rgba(36,120,243,.12);box-shadow:0 6px 24px rgba(15,23,42,.08)}
+.ppt-stage-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#eef2f7}
+.ppt-stage-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#fff;cursor:zoom-in}
+.ppt-stage-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;display:none}
+.ppt-stage-frame.video-active .ppt-stage-video{display:block}
+.ppt-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(15,23,42,.55);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0}
+.ppt-nav:hover{background:#2478f3;border-color:transparent}
+.ppt-nav.prev{left:12px}
+.ppt-nav.next{right:12px}
+.ppt-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ppt-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:#fff;border-top:1px solid #eef2f7;flex-wrap:wrap}
+.ppt-counter{font-size:13px;color:#6b7280;font-weight:600}
+.ppt-open{border:1px solid rgba(36,120,243,.25);background:#eef4ff;color:#2478f3;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;cursor:pointer;transition:all .2s}
+.ppt-open:hover{background:#2478f3;color:#fff;border-color:transparent}
+.ppt-thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 12px;background:#fff;border-top:1px solid #eef2f7;scrollbar-width:thin;scrollbar-color:#c7d2fe transparent}
+.ppt-thumb{flex:0 0 96px;width:96px;aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;background:#f3f4f6;transition:border-color .2s}
+.ppt-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.ppt-thumb.active{border-color:#2478f3}
+.ppt-tip{font-size:12px;color:#9ca3af;margin-top:10px}
+.ppt-lightbox{position:fixed;inset:0;z-index:200;background:rgba(9,13,26,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.ppt-lightbox.open{display:flex}
+.ppt-lightbox .lb-stage{position:relative;max-width:min(1280px,96vw);width:100%;display:flex;justify-content:center}
+.ppt-lightbox img{display:block;width:auto;max-width:100%;max-height:82vh;object-fit:contain;border-radius:8px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb-video{display:none;max-width:100%;max-height:82vh;object-fit:contain;background:#000;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.ppt-lightbox .lb-stage.video-active img{display:none}
+.ppt-lightbox .lb-stage.video-active .lb-video{display:block}
+.ppt-lightbox .ppt-nav{background:rgba(255,255,255,.14)}
+.ppt-lightbox .ppt-nav.prev{left:-12px}
+.ppt-lightbox .ppt-nav.next{right:-12px}
+.ppt-lightbox-close{position:absolute;top:-18px;right:-18px;z-index:4;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(15,23,42,.75);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0}
+.ppt-lightbox-close:hover{background:#dc2626;border-color:transparent}
+.lb-count{color:rgba(255,255,255,.75);font-size:13px;position:absolute;bottom:-32px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(15,23,42,.55);padding:4px 12px;border-radius:999px}
 @media(max-width:768px){
 .header{padding:40px 20px 36px}
 .header h1{font-size:22px}
@@ -103,8 +145,33 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .gallery-grid{grid-template-columns:1fr}
 .card{padding:22px 20px}
 .lang-switch{top:14px;right:14px;padding:7px 12px;font-size:12px}
+.ppt-nav{width:36px;height:36px}
+.ppt-nav.prev{left:6px}
+.ppt-nav.next{right:6px}
+.ppt-thumb{flex-basis:72px;width:72px}
+.ppt-toolbar{padding:10px 12px}
+.ppt-lightbox .ppt-nav.prev{left:4px}
+.ppt-lightbox .ppt-nav.next{right:4px}
+.ppt-lightbox-close{top:-12px;right:-8px}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Qingmiao Intelligent Logistics Informatization Solution Video",
+  "description": "Ningbo Qingmiao Intelligent Technology Co., Ltd. logistics informatization solution presentation video covering WMS, OMS, TMS and WCS supply chain systems.",
+  "thumbnailUrl": "https://www.nbqingmiao.cn/qingmiao/ppt/img/deck-en-42.jpg",
+  "contentUrl": "https://www.nbqingmiao.cn/qingmiao/ppt/media/solution-video-en.mp4",
+  "uploadDate": "2026-01-25",
+  "duration": "PT1M24S",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ningbo Qingmiao Intelligent Technology Co., Ltd.",
+    "logo": "https://www.nbqingmiao.cn/qingmiao/logo.png"
+  }
+}
+</script>
 </head><body data-i18n-page-title="info.pageTitle">
 <button class="lang-switch" id="langToggle" type="button" aria-label="Switch language">EN</button>
 <div class="header">
@@ -197,6 +264,61 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <li data-i18n-html="info.integration3"><strong>全链路协同</strong> — 从生产执行到物流设备的端到端数字化协同管理</li>
 <li data-i18n-html="info.integration4"><strong>轻量化运维</strong> — 切实解决制造企业数字化转型"落地难、成本高"的痛点</li>
 </ul></div>
+<div class="card"><h3 data-i18n="info.pptSectionTitle">物流信息化解决方案展示</h3>
+<p class="ppt-deck-intro" data-i18n-html="info.pptSectionIntro">方案覆盖<strong>仓库管理（WMS）、订单管理（OMS）、运输管理（TMS）与控制系统（WCS）</strong>，并提供中英文两套完整 PPT 供访客快速了解。中文版面向国内客户，英文版面向海外客户，内容保持原版。</p>
+<div class="ppt-decks">
+    <div class="ppt-switch" role="group" aria-label="方案PPT语言切换">
+      <button type="button" class="active" data-ppt-lang="zh">中文版</button>
+      <button type="button" data-ppt-lang="en">English</button>
+    </div>
+    <div class="ppt-deck active" id="pptDeckZh" data-ppt-deck="zh">
+      <div class="ppt-deck-head">
+        <h4>青苗物流信息化解决方案 · <span data-i18n="info.pptZhLabel">中文版</span></h4>
+        <span class="ppt-deck-meta" data-i18n="info.pptSlidesCountZh">共 47 页，点击图片可放大</span>
+      </div>
+      <div class="ppt-viewer" data-deck="zh">
+        <div class="ppt-stage">
+          <div class="ppt-stage-frame">
+            <img id="pptStageImgZh" src="ppt/img/deck-zh-01.jpg" alt="青苗物流信息化解决方案 第1页">
+          </div>
+          <button class="ppt-nav prev" type="button" aria-label="上一页" data-i18n="info.pptPrev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="ppt-nav next" type="button" aria-label="下一页" data-i18n="info.pptNext"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <div class="ppt-toolbar">
+          <span class="ppt-counter">1 / 47</span>
+          <button class="ppt-open" type="button" data-i18n="info.pptOpen">放大查看</button>
+        </div>
+        <div class="ppt-thumbs" id="pptThumbsZh"><button class="ppt-thumb active" type="button" data-index="0" aria-label="青苗物流信息化解决方案 第1页"><img src="ppt/img/deck-zh-01.jpg" alt="青苗物流信息化解决方案 第1页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="1" aria-label="青苗物流信息化解决方案 第2页"><img src="ppt/img/deck-zh-02.jpg" alt="青苗物流信息化解决方案 第2页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="2" aria-label="青苗物流信息化解决方案 第3页"><img src="ppt/img/deck-zh-03.jpg" alt="青苗物流信息化解决方案 第3页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="3" aria-label="青苗物流信息化解决方案 第4页"><img src="ppt/img/deck-zh-04.jpg" alt="青苗物流信息化解决方案 第4页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="4" aria-label="青苗物流信息化解决方案 第5页"><img src="ppt/img/deck-zh-05.jpg" alt="青苗物流信息化解决方案 第5页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="5" aria-label="青苗物流信息化解决方案 第6页"><img src="ppt/img/deck-zh-06.jpg" alt="青苗物流信息化解决方案 第6页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="6" aria-label="青苗物流信息化解决方案 第7页"><img src="ppt/img/deck-zh-07.jpg" alt="青苗物流信息化解决方案 第7页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="7" aria-label="青苗物流信息化解决方案 第8页"><img src="ppt/img/deck-zh-08.jpg" alt="青苗物流信息化解决方案 第8页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="8" aria-label="青苗物流信息化解决方案 第9页"><img src="ppt/img/deck-zh-09.jpg" alt="青苗物流信息化解决方案 第9页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="9" aria-label="青苗物流信息化解决方案 第10页"><img src="ppt/img/deck-zh-10.jpg" alt="青苗物流信息化解决方案 第10页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="10" aria-label="青苗物流信息化解决方案 第11页"><img src="ppt/img/deck-zh-11.jpg" alt="青苗物流信息化解决方案 第11页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="11" aria-label="青苗物流信息化解决方案 第12页"><img src="ppt/img/deck-zh-12.jpg" alt="青苗物流信息化解决方案 第12页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="12" aria-label="青苗物流信息化解决方案 第13页"><img src="ppt/img/deck-zh-13.jpg" alt="青苗物流信息化解决方案 第13页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="13" aria-label="青苗物流信息化解决方案 第14页"><img src="ppt/img/deck-zh-14.jpg" alt="青苗物流信息化解决方案 第14页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="14" aria-label="青苗物流信息化解决方案 第15页"><img src="ppt/img/deck-zh-15.jpg" alt="青苗物流信息化解决方案 第15页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="15" aria-label="青苗物流信息化解决方案 第16页"><img src="ppt/img/deck-zh-16.jpg" alt="青苗物流信息化解决方案 第16页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="16" aria-label="青苗物流信息化解决方案 第17页"><img src="ppt/img/deck-zh-17.jpg" alt="青苗物流信息化解决方案 第17页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="17" aria-label="青苗物流信息化解决方案 第18页"><img src="ppt/img/deck-zh-18.jpg" alt="青苗物流信息化解决方案 第18页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="18" aria-label="青苗物流信息化解决方案 第19页"><img src="ppt/img/deck-zh-19.jpg" alt="青苗物流信息化解决方案 第19页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="19" aria-label="青苗物流信息化解决方案 第20页"><img src="ppt/img/deck-zh-20.jpg" alt="青苗物流信息化解决方案 第20页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="20" aria-label="青苗物流信息化解决方案 第21页"><img src="ppt/img/deck-zh-21.jpg" alt="青苗物流信息化解决方案 第21页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="21" aria-label="青苗物流信息化解决方案 第22页"><img src="ppt/img/deck-zh-22.jpg" alt="青苗物流信息化解决方案 第22页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="22" aria-label="青苗物流信息化解决方案 第23页"><img src="ppt/img/deck-zh-23.jpg" alt="青苗物流信息化解决方案 第23页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="23" aria-label="青苗物流信息化解决方案 第24页"><img src="ppt/img/deck-zh-24.jpg" alt="青苗物流信息化解决方案 第24页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="24" aria-label="青苗物流信息化解决方案 第25页"><img src="ppt/img/deck-zh-25.jpg" alt="青苗物流信息化解决方案 第25页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="25" aria-label="青苗物流信息化解决方案 第26页"><img src="ppt/img/deck-zh-26.jpg" alt="青苗物流信息化解决方案 第26页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="26" aria-label="青苗物流信息化解决方案 第27页"><img src="ppt/img/deck-zh-27.jpg" alt="青苗物流信息化解决方案 第27页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="27" aria-label="青苗物流信息化解决方案 第28页"><img src="ppt/img/deck-zh-28.jpg" alt="青苗物流信息化解决方案 第28页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="28" aria-label="青苗物流信息化解决方案 第29页"><img src="ppt/img/deck-zh-29.jpg" alt="青苗物流信息化解决方案 第29页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="29" aria-label="青苗物流信息化解决方案 第30页"><img src="ppt/img/deck-zh-30.jpg" alt="青苗物流信息化解决方案 第30页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="30" aria-label="青苗物流信息化解决方案 第31页"><img src="ppt/img/deck-zh-31.jpg" alt="青苗物流信息化解决方案 第31页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="31" aria-label="青苗物流信息化解决方案 第32页"><img src="ppt/img/deck-zh-32.jpg" alt="青苗物流信息化解决方案 第32页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="32" aria-label="青苗物流信息化解决方案 第33页"><img src="ppt/img/deck-zh-33.jpg" alt="青苗物流信息化解决方案 第33页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="33" aria-label="青苗物流信息化解决方案 第34页"><img src="ppt/img/deck-zh-34.jpg" alt="青苗物流信息化解决方案 第34页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="34" aria-label="青苗物流信息化解决方案 第35页"><img src="ppt/img/deck-zh-35.jpg" alt="青苗物流信息化解决方案 第35页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="35" aria-label="青苗物流信息化解决方案 第36页"><img src="ppt/img/deck-zh-36.jpg" alt="青苗物流信息化解决方案 第36页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="36" aria-label="青苗物流信息化解决方案 第37页"><img src="ppt/img/deck-zh-37.jpg" alt="青苗物流信息化解决方案 第37页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="37" aria-label="青苗物流信息化解决方案 第38页"><img src="ppt/img/deck-zh-38.jpg" alt="青苗物流信息化解决方案 第38页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="38" aria-label="青苗物流信息化解决方案 第39页"><img src="ppt/img/deck-zh-39.jpg" alt="青苗物流信息化解决方案 第39页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="39" aria-label="青苗物流信息化解决方案 第40页"><img src="ppt/img/deck-zh-40.jpg" alt="青苗物流信息化解决方案 第40页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="40" aria-label="青苗物流信息化解决方案 第41页"><img src="ppt/img/deck-zh-41.jpg" alt="青苗物流信息化解决方案 第41页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="41" aria-label="青苗物流信息化解决方案 第42页"><img src="ppt/img/deck-zh-42.jpg" alt="青苗物流信息化解决方案 第42页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="42" aria-label="青苗物流信息化解决方案 第43页"><img src="ppt/img/deck-zh-43.jpg" alt="青苗物流信息化解决方案 第43页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="43" aria-label="青苗物流信息化解决方案 第44页"><img src="ppt/img/deck-zh-44.jpg" alt="青苗物流信息化解决方案 第44页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="44" aria-label="青苗物流信息化解决方案 第45页"><img src="ppt/img/deck-zh-45.jpg" alt="青苗物流信息化解决方案 第45页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="45" aria-label="青苗物流信息化解决方案 第46页"><img src="ppt/img/deck-zh-46.jpg" alt="青苗物流信息化解决方案 第46页" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="46" aria-label="青苗物流信息化解决方案 第47页"><img src="ppt/img/deck-zh-47.jpg" alt="青苗物流信息化解决方案 第47页" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="ppt-tip" data-i18n="info.pptTip">支持左右滑动浏览，点击缩略图快速切换，点击主图可放大。</p>
+    </div>
+    <div class="ppt-deck" id="pptDeckEn" data-ppt-deck="en">
+      <div class="ppt-deck-head">
+        <h4>Qingmiao Logistics Informatization Solution · <span data-i18n="info.pptEnLabel">English Version</span></h4>
+        <span class="ppt-deck-meta" data-i18n="info.pptSlidesCountEn">47 slides in total, click an image to enlarge</span>
+      </div>
+      <div class="ppt-viewer" data-deck="en">
+        <div class="ppt-stage">
+          <div class="ppt-stage-frame">
+            <img id="pptStageImgEn" src="ppt/img/deck-en-01.jpg" alt="Qingmiao logistics informatization solution slide 1">
+            <video id="pptStageVideoEn" class="ppt-stage-video" controls preload="none" playsinline poster="ppt/img/deck-en-42.jpg" aria-label="Qingmiao logistics informatization solution video">
+              <source src="ppt/media/solution-video-en.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <button class="ppt-nav prev" type="button" aria-label="Previous" data-i18n="info.pptPrev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="ppt-nav next" type="button" aria-label="Next" data-i18n="info.pptNext"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <div class="ppt-toolbar">
+          <span class="ppt-counter">1 / 47</span>
+          <button class="ppt-open" type="button" data-i18n="info.pptOpen">Enlarge</button>
+        </div>
+        <div class="ppt-thumbs" id="pptThumbsEn"><button class="ppt-thumb active" type="button" data-index="0" aria-label="Qingmiao logistics informatization solution slide 1"><img src="ppt/img/deck-en-01.jpg" alt="Qingmiao logistics informatization solution slide 1" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="1" aria-label="Qingmiao logistics informatization solution slide 2"><img src="ppt/img/deck-en-02.jpg" alt="Qingmiao logistics informatization solution slide 2" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="2" aria-label="Qingmiao logistics informatization solution slide 3"><img src="ppt/img/deck-en-03.jpg" alt="Qingmiao logistics informatization solution slide 3" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="3" aria-label="Qingmiao logistics informatization solution slide 4"><img src="ppt/img/deck-en-04.jpg" alt="Qingmiao logistics informatization solution slide 4" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="4" aria-label="Qingmiao logistics informatization solution slide 5"><img src="ppt/img/deck-en-05.jpg" alt="Qingmiao logistics informatization solution slide 5" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="5" aria-label="Qingmiao logistics informatization solution slide 6"><img src="ppt/img/deck-en-06.jpg" alt="Qingmiao logistics informatization solution slide 6" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="6" aria-label="Qingmiao logistics informatization solution slide 7"><img src="ppt/img/deck-en-07.jpg" alt="Qingmiao logistics informatization solution slide 7" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="7" aria-label="Qingmiao logistics informatization solution slide 8"><img src="ppt/img/deck-en-08.jpg" alt="Qingmiao logistics informatization solution slide 8" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="8" aria-label="Qingmiao logistics informatization solution slide 9"><img src="ppt/img/deck-en-09.jpg" alt="Qingmiao logistics informatization solution slide 9" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="9" aria-label="Qingmiao logistics informatization solution slide 10"><img src="ppt/img/deck-en-10.jpg" alt="Qingmiao logistics informatization solution slide 10" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="10" aria-label="Qingmiao logistics informatization solution slide 11"><img src="ppt/img/deck-en-11.jpg" alt="Qingmiao logistics informatization solution slide 11" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="11" aria-label="Qingmiao logistics informatization solution slide 12"><img src="ppt/img/deck-en-12.jpg" alt="Qingmiao logistics informatization solution slide 12" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="12" aria-label="Qingmiao logistics informatization solution slide 13"><img src="ppt/img/deck-en-13.jpg" alt="Qingmiao logistics informatization solution slide 13" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="13" aria-label="Qingmiao logistics informatization solution slide 14"><img src="ppt/img/deck-en-14.jpg" alt="Qingmiao logistics informatization solution slide 14" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="14" aria-label="Qingmiao logistics informatization solution slide 15"><img src="ppt/img/deck-en-15.jpg" alt="Qingmiao logistics informatization solution slide 15" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="15" aria-label="Qingmiao logistics informatization solution slide 16"><img src="ppt/img/deck-en-16.jpg" alt="Qingmiao logistics informatization solution slide 16" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="16" aria-label="Qingmiao logistics informatization solution slide 17"><img src="ppt/img/deck-en-17.jpg" alt="Qingmiao logistics informatization solution slide 17" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="17" aria-label="Qingmiao logistics informatization solution slide 18"><img src="ppt/img/deck-en-18.jpg" alt="Qingmiao logistics informatization solution slide 18" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="18" aria-label="Qingmiao logistics informatization solution slide 19"><img src="ppt/img/deck-en-19.jpg" alt="Qingmiao logistics informatization solution slide 19" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="19" aria-label="Qingmiao logistics informatization solution slide 20"><img src="ppt/img/deck-en-20.jpg" alt="Qingmiao logistics informatization solution slide 20" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="20" aria-label="Qingmiao logistics informatization solution slide 21"><img src="ppt/img/deck-en-21.jpg" alt="Qingmiao logistics informatization solution slide 21" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="21" aria-label="Qingmiao logistics informatization solution slide 22"><img src="ppt/img/deck-en-22.jpg" alt="Qingmiao logistics informatization solution slide 22" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="22" aria-label="Qingmiao logistics informatization solution slide 23"><img src="ppt/img/deck-en-23.jpg" alt="Qingmiao logistics informatization solution slide 23" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="23" aria-label="Qingmiao logistics informatization solution slide 24"><img src="ppt/img/deck-en-24.jpg" alt="Qingmiao logistics informatization solution slide 24" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="24" aria-label="Qingmiao logistics informatization solution slide 25"><img src="ppt/img/deck-en-25.jpg" alt="Qingmiao logistics informatization solution slide 25" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="25" aria-label="Qingmiao logistics informatization solution slide 26"><img src="ppt/img/deck-en-26.jpg" alt="Qingmiao logistics informatization solution slide 26" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="26" aria-label="Qingmiao logistics informatization solution slide 27"><img src="ppt/img/deck-en-27.jpg" alt="Qingmiao logistics informatization solution slide 27" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="27" aria-label="Qingmiao logistics informatization solution slide 28"><img src="ppt/img/deck-en-28.jpg" alt="Qingmiao logistics informatization solution slide 28" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="28" aria-label="Qingmiao logistics informatization solution slide 29"><img src="ppt/img/deck-en-29.jpg" alt="Qingmiao logistics informatization solution slide 29" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="29" aria-label="Qingmiao logistics informatization solution slide 30"><img src="ppt/img/deck-en-30.jpg" alt="Qingmiao logistics informatization solution slide 30" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="30" aria-label="Qingmiao logistics informatization solution slide 31"><img src="ppt/img/deck-en-31.jpg" alt="Qingmiao logistics informatization solution slide 31" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="31" aria-label="Qingmiao logistics informatization solution slide 32"><img src="ppt/img/deck-en-32.jpg" alt="Qingmiao logistics informatization solution slide 32" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="32" aria-label="Qingmiao logistics informatization solution slide 33"><img src="ppt/img/deck-en-33.jpg" alt="Qingmiao logistics informatization solution slide 33" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="33" aria-label="Qingmiao logistics informatization solution slide 34"><img src="ppt/img/deck-en-34.jpg" alt="Qingmiao logistics informatization solution slide 34" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="34" aria-label="Qingmiao logistics informatization solution slide 35"><img src="ppt/img/deck-en-35.jpg" alt="Qingmiao logistics informatization solution slide 35" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="35" aria-label="Qingmiao logistics informatization solution slide 36"><img src="ppt/img/deck-en-36.jpg" alt="Qingmiao logistics informatization solution slide 36" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="36" aria-label="Qingmiao logistics informatization solution slide 37"><img src="ppt/img/deck-en-37.jpg" alt="Qingmiao logistics informatization solution slide 37" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="37" aria-label="Qingmiao logistics informatization solution slide 38"><img src="ppt/img/deck-en-38.jpg" alt="Qingmiao logistics informatization solution slide 38" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="38" aria-label="Qingmiao logistics informatization solution slide 39"><img src="ppt/img/deck-en-39.jpg" alt="Qingmiao logistics informatization solution slide 39" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="39" aria-label="Qingmiao logistics informatization solution slide 40"><img src="ppt/img/deck-en-40.jpg" alt="Qingmiao logistics informatization solution slide 40" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="40" aria-label="Qingmiao logistics informatization solution slide 41"><img src="ppt/img/deck-en-41.jpg" alt="Qingmiao logistics informatization solution slide 41" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="41" aria-label="Qingmiao logistics informatization solution slide 42"><img src="ppt/img/deck-en-42.jpg" alt="Qingmiao logistics informatization solution slide 42" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="42" aria-label="Qingmiao logistics informatization solution slide 43"><img src="ppt/img/deck-en-43.jpg" alt="Qingmiao logistics informatization solution slide 43" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="43" aria-label="Qingmiao logistics informatization solution slide 44"><img src="ppt/img/deck-en-44.jpg" alt="Qingmiao logistics informatization solution slide 44" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="44" aria-label="Qingmiao logistics informatization solution slide 45"><img src="ppt/img/deck-en-45.jpg" alt="Qingmiao logistics informatization solution slide 45" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="45" aria-label="Qingmiao logistics informatization solution slide 46"><img src="ppt/img/deck-en-46.jpg" alt="Qingmiao logistics informatization solution slide 46" loading="lazy" decoding="async"></button><button class="ppt-thumb" type="button" data-index="46" aria-label="Qingmiao logistics informatization solution slide 47"><img src="ppt/img/deck-en-47.jpg" alt="Qingmiao logistics informatization solution slide 47" loading="lazy" decoding="async"></button></div>
+      </div>
+      <p class="ppt-tip" data-i18n="info.pptTip">Swipe to browse, use thumbnails to jump, and click the main image to enlarge.</p>
+    </div>
+  </div>
+</div>
 </div>
 <div class="page-section" id="page-news">
 <div class="page-title" data-i18n="info.newsTitle">新闻动态</div>
@@ -234,10 +356,10 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <div class="contact-grid">
 <div class="contact-item"><span class="emoji">📍</span><div><div class="label" data-i18n="info.contactAddressLabel">公司地址</div><div class="value" data-i18n="info.contactAddressValue">浙江省宁波市鄞州区学府路3号浙江大学（宁波校区）16号楼318</div></div></div>
 <div class="contact-item"><span class="emoji">📞</span><div><div class="label" data-i18n="info.contactPhoneLabel">联系电话</div><div class="value" data-i18n="info.contactPhoneValue">18268615966</div></div></div>
-<div class="contact-item"><span class="emoji">📧</span><div><div class="label" data-i18n="info.contactEmailLabel">电子邮箱</div><div class="value" data-i18n="info.contactEmailValue">931423058@qq.com</div></div></div>
+<div class="contact-item"><span class="emoji">📧</span><div><div class="label" data-i18n="info.contactEmailLabel">电子邮箱</div><div class="value" data-i18n="info.contactEmailValue">2059149719@qq.com</div></div></div>
 <div class="contact-item"><span class="emoji">💬</span><div><div class="label" data-i18n="info.contactWechatLabel">微信公众号</div><a class="value wechat-link" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=Mzg2MjYzODY3Nw==&amp;scene=124#wechat_redirect" target="_blank" rel="noopener noreferrer" data-i18n="info.contactWechatValue">宁波青苗智能有限公司</a></div></div>
 </div></div>
-<div class="card"><h3 data-i18n="info.bizCoopTitle">商务合作</h3><p data-i18n-html="info.bizCoopDesc">邮箱：<strong>partner@qingmiaotech.com</strong>，2个工作日内回复。</p></div>
+<div class="card"><h3 data-i18n="info.bizCoopTitle">商务合作</h3><p data-i18n-html="info.bizCoopDesc">邮箱：<strong>2059149719@qq.com</strong>，2个工作日内回复。</p></div>
 </div>
 <div class="page-section" id="page-service">
 <div class="page-title" data-i18n="info.serviceTitle">售后服务</div>
@@ -257,6 +379,16 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <li data-i18n-html="info.serviceContent5"><strong>定制二开：</strong>基于标准产品的个性化定制与二次开发</li>
 </ul></div>
 <div class="card"><h3 data-i18n="info.serviceHotlineTitle">服务热线</h3><p data-i18n-html="info.serviceHotlineDesc">技术支持：<strong>0574-8800 5678</strong>（工作日 9:00-18:00）<br>紧急故障：<strong>0574-8800 5679</strong>（7×24小时）</p></div>
+</div>
+</div>
+<div class="ppt-lightbox" id="pptLightbox" role="dialog" aria-modal="true" aria-label="PPT 大图查看">
+<div class="lb-stage">
+<button class="ppt-lightbox-close" type="button" aria-label="关闭">×</button>
+<img src="" alt="">
+<video id="pptLightboxVideo" class="lb-video" controls preload="none" playsinline poster="ppt/img/deck-en-42.jpg" aria-label="Qingmiao logistics informatization solution video"></video>
+<button class="ppt-nav lb-prev" type="button" aria-label="上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+<button class="ppt-nav lb-next" type="button" aria-label="下一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+<span class="lb-count"></span>
 </div>
 </div>
 <div class="footer"><span data-i18n="info.copyright">&copy; 2026 宁波青苗智能科技有限公司</span> &nbsp;·&nbsp; <a href="index.html" data-i18n="info.footerHome">首页</a> &nbsp;·&nbsp; <a href="info.html?page=contact" data-i18n="info.footerContact">联系方式</a></div>
@@ -284,6 +416,174 @@ switchPage(this.getAttribute("data-page"));
 var params = new URLSearchParams(window.location.search);
 var defaultPage = params.get("page")||"about";
 switchPage(defaultPage);
+if(params.get("page")){
+var target = document.getElementById("page-"+defaultPage);
+if(target && target.scrollIntoView){target.scrollIntoView();}
+}
+})();
+</script>
+<script>
+(function(){
+var lightbox = document.getElementById("pptLightbox");
+if(!lightbox){return;}
+var lbImg = lightbox.querySelector("img");
+var lbCount = lightbox.querySelector(".lb-count");
+var lbPrev = lightbox.querySelector(".lb-prev");
+var lbNext = lightbox.querySelector(".lb-next");
+var lbClose = lightbox.querySelector(".ppt-lightbox-close");
+var lbVideo = lightbox.querySelector("video");
+var activeDeck = null;
+var activeIndex = 0;
+var deckRegistry = {};
+var EN_VIDEO = {index: 41, url: "ppt/media/solution-video-en.mp4", poster: "ppt/img/deck-en-42.jpg"};
+
+function setLightboxMedia(deck, i){
+  var isVideo = deck === "en" && EN_VIDEO && i === EN_VIDEO.index;
+  lbImg.style.display = isVideo ? "none" : "";
+  lbVideo.style.display = isVideo ? "block" : "none";
+  if(isVideo){
+    if(!lbVideo.getAttribute("src")){
+      lbVideo.setAttribute("src", EN_VIDEO.url);
+      lbVideo.setAttribute("poster", EN_VIDEO.poster);
+    }
+  } else {
+    if(lbVideo.getAttribute("src")){
+      lbVideo.pause();
+      lbVideo.removeAttribute("src");
+      lbVideo.load();
+    }
+  }
+}
+
+function initDeck(deck){
+  var root = document.querySelector('[data-deck="' + deck + '"]');
+  if(!root){return;}
+  var stageImg = root.querySelector(".ppt-stage-frame img");
+  var stageVideo = root.querySelector(".ppt-stage-video");
+  var prevBtn = root.querySelector(".ppt-nav.prev");
+  var nextBtn = root.querySelector(".ppt-nav.next");
+  var openBtn = root.querySelector(".ppt-open");
+  var counter = root.querySelector(".ppt-counter");
+  var thumbs = [].slice.call(root.querySelectorAll(".ppt-thumb"));
+  var thumbImgs = [].slice.call(root.querySelectorAll(".ppt-thumb img"));
+  var current = 0;
+
+  function setStageMedia(i){
+    var isVideo = deck === "en" && EN_VIDEO && i === EN_VIDEO.index;
+    stageImg.parentElement.classList.toggle("video-active", isVideo);
+    if(stageVideo && !isVideo){stageVideo.pause();}
+  }
+
+  function show(i){
+    if(i < 0){i = thumbs.length - 1;}
+    if(i >= thumbs.length){i = 0;}
+    current = i;
+    stageImg.src = thumbImgs[current].getAttribute("src");
+    stageImg.alt = thumbImgs[current].getAttribute("alt");
+    counter.textContent = (current + 1) + " / " + thumbs.length;
+    for(var j = 0; j < thumbs.length; j++){
+      thumbs[j].classList.toggle("active", j === current);
+    }
+    thumbs[current].scrollIntoView({behavior:"smooth", block:"nearest", inline:"center"});
+    setStageMedia(current);
+  }
+
+  function openLightbox(i){
+    activeDeck = deck;
+    activeIndex = i;
+    setLightboxMedia(deck, i);
+    lbImg.src = thumbImgs[i].getAttribute("src");
+    lbImg.alt = thumbImgs[i].getAttribute("alt");
+    lbCount.textContent = (i + 1) + " / " + thumbs.length;
+    if(stageVideo){stageVideo.pause();}
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function lbShow(dir){
+    activeIndex = (activeIndex + dir + thumbs.length) % thumbs.length;
+    setLightboxMedia(deck, activeIndex);
+    lbImg.src = thumbImgs[activeIndex].getAttribute("src");
+    lbImg.alt = thumbImgs[activeIndex].getAttribute("alt");
+    lbCount.textContent = (activeIndex + 1) + " / " + thumbs.length;
+    show(activeIndex);
+  }
+
+  prevBtn.addEventListener("click", function(){show(current - 1);});
+  nextBtn.addEventListener("click", function(){show(current + 1);});
+  stageImg.addEventListener("click", function(){openLightbox(current);});
+  openBtn.addEventListener("click", function(){openLightbox(current);});
+  thumbs.forEach(function(th, idx){
+    th.addEventListener("click", function(){show(idx);});
+  });
+
+  var startX = null;
+  var frame = root.querySelector(".ppt-stage-frame");
+  frame.addEventListener("touchstart", function(e){
+    startX = e.changedTouches[0].clientX;
+  }, {passive:true});
+  frame.addEventListener("touchend", function(e){
+    if(startX === null){return;}
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 40){show(current + (dx < 0 ? 1 : -1));}
+    startX = null;
+  }, {passive:true});
+
+  window.__pptShowDeck = window.__pptShowDeck || function(lang, index){
+    if(lang !== deck){return;}
+    show(typeof index === "number" ? index : 0);
+  };
+  deckRegistry[deck] = {lbShow: lbShow};
+}
+
+initDeck("zh");
+initDeck("en");
+
+function closeLightbox(){
+  lightbox.classList.remove("open");
+  document.body.style.overflow = "";
+  lbVideo.pause();
+  if(lbVideo.getAttribute("src")){
+    lbVideo.removeAttribute("src");
+    lbVideo.load();
+  }
+}
+function lbPrevHandler(){if(activeDeck && deckRegistry[activeDeck]){deckRegistry[activeDeck].lbShow(-1);}}
+function lbNextHandler(){if(activeDeck && deckRegistry[activeDeck]){deckRegistry[activeDeck].lbShow(1);}}
+
+lbClose.addEventListener("click", closeLightbox);
+lbPrev.addEventListener("click", lbPrevHandler);
+lbNext.addEventListener("click", lbNextHandler);
+lightbox.addEventListener("click", function(e){
+  if(e.target === lightbox){closeLightbox();}
+});
+document.addEventListener("keydown", function(e){
+  if(!lightbox.classList.contains("open")){return;}
+  if(e.key === "Escape"){closeLightbox();}
+  if(e.key === "ArrowLeft"){lbPrevHandler();}
+  if(e.key === "ArrowRight"){lbNextHandler();}
+});
+
+var switchBtns = document.querySelectorAll(".ppt-switch button");
+var decks = document.querySelectorAll(".ppt-deck");
+function activateDeck(lang){
+  switchBtns.forEach(function(b){
+    b.classList.toggle("active", b.getAttribute("data-ppt-lang") === lang);
+  });
+  decks.forEach(function(d){
+    d.classList.toggle("active", d.getAttribute("data-ppt-deck") === lang);
+  });
+  activeDeck = lang;
+  if(lightbox.classList.contains("open")){closeLightbox();}
+}
+switchBtns.forEach(function(b){
+  b.addEventListener("click", function(){
+    activateDeck(this.getAttribute("data-ppt-lang"));
+  });
+});
+window.__pptSetLang = function(lang){
+  activateDeck(lang === "en" ? "en" : "zh");
+};
 })();
 </script>
 </body></html>
