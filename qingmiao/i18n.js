@@ -2,6 +2,7 @@
   "use strict";
 
   var KEY = "qingmiao_lang";
+  var originalTitle = document.title;
 
   var EN = {
     "index.pageTitle": "Ningbo Qingmiao Intelligent Technology Co., Ltd.",
@@ -153,6 +154,16 @@
     "info.integration2": "<strong>WCS control system</strong> — Multi-protocol compatibility for unified scheduling and control of logistics equipment",
     "info.integration3": "<strong>Full-chain coordination</strong> — End-to-end digital coordination from production execution to logistics equipment",
     "info.integration4": "<strong>Lightweight operations</strong> — Address the pain points of high cost and difficult implementation in manufacturing digital transformation",
+    "info.pptSectionTitle": "Logistics Informatization Solution Presentation",
+    "info.pptSectionIntro": "The solution covers <strong>WMS warehouse management, OMS order management, TMS transportation management and WCS control systems</strong>. Two complete PPT decks are provided so visitors can quickly understand the offering: a Chinese version for domestic customers and an English version for overseas customers, both keeping the original content.",
+    "info.pptZhLabel": "Chinese Version",
+    "info.pptEnLabel": "English Version",
+    "info.pptSlidesCountZh": "47 slides in total, click an image to enlarge",
+    "info.pptSlidesCountEn": "47 slides in total, click an image to enlarge",
+    "info.pptPrev": "Previous",
+    "info.pptNext": "Next",
+    "info.pptOpen": "Enlarge",
+    "info.pptTip": "Swipe to browse, use thumbnails to jump, and click the main image to enlarge.",
     "info.newsTitle": "News",
     "info.news2Date": "May 2026",
     "info.news2Title": "Founder Zeng Xiaohong joined the Yinzhou CPPCC consultation activity",
@@ -179,11 +190,11 @@
     "info.contactPhoneLabel": "Phone",
     "info.contactPhoneValue": "18268615966",
     "info.contactEmailLabel": "Email",
-    "info.contactEmailValue": "931423058@qq.com",
+    "info.contactEmailValue": "2059149719@qq.com",
     "info.contactWechatLabel": "WeChat Official Account",
     "info.contactWechatValue": "Ningbo Qingmiao Intelligent Co., Ltd.",
     "info.bizCoopTitle": "Business Cooperation",
-    "info.bizCoopDesc": "Email: <strong>partner@qingmiaotech.com</strong>, replies within 2 business days.",
+    "info.bizCoopDesc": "Email: <strong>2059149719@qq.com</strong>, replies within 2 business days.",
     "info.serviceTitle": "After-sales Service",
     "info.servicePromiseTitle": "Service Commitment",
     "info.servicePromiseDesc": "Put customer interests first, based on the implementation philosophy of targeted design, companion delivery, and metric-based results.",
@@ -276,12 +287,15 @@
     document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
     var titleKey = document.body.getAttribute("data-i18n-page-title");
     if (titleKey) {
-      document.title = lang === "en" && EN[titleKey] ? EN[titleKey] : "宁波青苗智能科技有限公司";
+      document.title = lang === "en" && EN[titleKey] ? EN[titleKey] : originalTitle;
     }
 
     var toggle = document.getElementById("langToggle");
     if (toggle) {
       toggle.textContent = lang === "zh" ? "EN" : "中文";
+    }
+    if (window.__pptSetLang) {
+      window.__pptSetLang(lang);
     }
   }
 
