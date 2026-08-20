@@ -111,7 +111,7 @@
     "info.founderEquity": "Equity",
     "info.founderValueName": "Zeng Xiaohong",
     "info.founderValueRole": "Executive Director and General Manager",
-    "info.founderValueSocial": "Supervisor of Ningbo Longyan Chamber of Commerce",
+    "info.founderValueSocial": "Zhejiang University, Council Member of Ningbo Computer Software Branch",
     "info.founderValueEquity": "99%",
     "info.cultureTitle": "Company Culture",
     "info.culturePositionTitle": "Positioning",
