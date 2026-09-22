@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>页面已更新｜青苗智能</title>
+  <link rel="canonical" href="https://www.nbqingmiao.cn/qingmiao/">
+  <script>
+    (function () {
+      var sections = { about: "about", product: "products", news: "cases", contact: "contact", service: "contact" };
+      var page = new URLSearchParams(window.location.search).get("page") || "about";
+      var section = Object.prototype.hasOwnProperty.call(sections, page) ? sections[page] : "about";
+      window.location.replace("/qingmiao/#" + section);
+    }());
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/qingmiao/#about"></noscript>
+</head>
+<body>
+  <h1>青苗智能官网已更新</h1>
+  <p>正在前往新版页面。您也可以直接访问：</p>
+  <ul>
+    <li><a href="/qingmiao/#about">公司介绍</a></li>
+    <li><a href="/qingmiao/#products">产品中心</a></li>
+    <li><a href="/qingmiao/#cases">项目案例</a></li>
+    <li><a href="/qingmiao/#contact">联系与服务</a></li>
+  </ul>
+</body>
+</html>
