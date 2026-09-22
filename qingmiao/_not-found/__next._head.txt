@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[7543,[],"ViewportBoundary"]
+3:I[7543,[],"MetadataBoundary"]
+4:"$Sreact.suspense"
+5:I[342,[],"IconMark"]
+0:{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"青苗科技｜智能物流与企业数智化解决方案"}],["$","meta","1",{"name":"description","content":"青苗科技提供仓储规划咨询、WMS/WCS/OMS/TMS 软件产品、AI 调度分析与自动化设备集成服务。"}],["$","link","2",{"rel":"shortcut icon","href":"/qingmiao/qingmiao-logo.png"}],["$","link","3",{"rel":"icon","href":"/qingmiao/qingmiao-logo.png","type":"image/png"}],["$","$L5","4",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"LKUuF3eOAx82C2I0YJXaP"}
