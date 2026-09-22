@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="900" viewBox="0 0 960 900" role="img" aria-labelledby="title desc">
+  <title id="title">供应链协同方案示意</title>
+  <desc id="desc">依据际华项目介绍绘制的多系统集成关系示意，并非真实系统界面。ERP、OMS、SRM、WMS、TMS、BMS 共同参与供应链信息与流程协同，配套仓储规划、园区规划与运营指导。</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#081d39"/><stop offset="1" stop-color="#123e63"/></linearGradient><linearGradient id="core" x2="1" y2="0"><stop stop-color="#185ad2"/><stop offset="1" stop-color="#087b9c"/></linearGradient></defs>
+  <rect width="960" height="900" fill="url(#bg)"/>
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+    <text x="64" y="80" font-size="24" letter-spacing="4" fill="#78dff5">SUPPLY CHAIN COLLABORATION</text>
+    <text x="64" y="151" font-size="58" font-weight="600" fill="#f1f8ff">供应链协同</text>
+    <text x="64" y="210" font-size="36" fill="#b4cce4">多系统集成，贯通信息与业务流程</text>
+    <g fill="none" stroke="#5aa5d1" stroke-width="2"><path d="M200 330V365H760V330M480 330V406M200 590V555H760V590M480 555V516"/></g>
+    <g fill="#143555" stroke="#427596" stroke-width="2"><rect x="72" y="250" width="256" height="80" rx="8"/><rect x="352" y="250" width="256" height="80" rx="8"/><rect x="632" y="250" width="256" height="80" rx="8"/><rect x="72" y="590" width="256" height="80" rx="8"/><rect x="352" y="590" width="256" height="80" rx="8"/><rect x="632" y="590" width="256" height="80" rx="8"/></g>
+    <g fill="#e2f5ff" font-size="48" font-weight="600" text-anchor="middle"><text x="200" y="303">ERP</text><text x="480" y="303">OMS</text><text x="760" y="303">SRM</text><text x="200" y="643">WMS</text><text x="480" y="643">TMS</text><text x="760" y="643">BMS</text></g>
+    <rect x="176" y="406" width="608" height="110" rx="10" fill="url(#core)" stroke="#64d4ed" stroke-width="2"/>
+    <text x="480" y="452" text-anchor="middle" font-size="44" font-weight="600" fill="white">供应链信息与流程协同</text>
+    <text x="480" y="493" text-anchor="middle" font-size="32" fill="#c8f0fc">管理流程衔接　业务记录追溯</text>
+    <path d="M72 722H888" stroke="#42708e"/>
+    <g fill="#c6deef" font-size="42" text-anchor="middle"><text x="200" y="774">仓储规划</text><text x="480" y="774">园区规划</text><text x="760" y="774">运营指导</text></g>
+    <text x="480" y="850" text-anchor="middle" font-size="36" fill="#9cb9ce">方案示意 · 按项目介绍绘制</text>
+  </g>
+</svg>
