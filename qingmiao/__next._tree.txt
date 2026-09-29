@@ -1,5 +1,4 @@
 :HL["/qingmiao/_next/static/css/c28d4b8ecabb38de.css","style"]
-:HL["/qingmiao/_next/static/css/c9d1442192ae6aa7.css","style"]
-:HL["/qingmiao/_next/static/css/1db0fbfce18d378f.css","style"]
-:HL["/qingmiao/qingmiao-logo.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"LE-KfCMbgR_KCT72G2iY9"}
+:HL["/qingmiao/_next/static/css/b2d09c3ff8d3d0d6.css","style"]
+:HL["/qingmiao/_next/static/css/112f1e5142f0b416.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"(zh)","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"VKyaIzNxX9FIc7kx4Zpg1"}
